@@ -70,9 +70,9 @@ abstract class CrudController extends BaseController
         }
 
         $customRedirect = $this->updateRedirect($model);
-        return $customRedirect 
-          ? $customRedirect 
-          : $this->response->redirect(url_to("$this->modelClassName::view", $this->request->getPost('id') ?? $model->getInsertID()));
+        return $customRedirect
+            ? $customRedirect
+            : $this->response->redirect(url_to("$this->modelClassName::view", $this->request->getPost('id') ?? $model->getInsertID()));
     }
 
     protected function beforeSave($data = null)
@@ -99,9 +99,13 @@ abstract class CrudController extends BaseController
         if ($save) {
             $session->setFlashdata('success', lang('saved_successfully'));
         } else {
-            $session->setFlashdata('error', $save->errors());
+            $session->setFlashdata('error', $model->errors());
         }
-        return redirect("$this->modelClassName::index");
+
+        $customRedirect = $this->updateRedirect($model);
+        return $customRedirect
+            ? $customRedirect
+            : $this->response->redirect(url_to("$this->modelClassName::index"));
     }
 
     /**
