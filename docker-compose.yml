@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  # database:
+  #   image: 'postgres:latest'
+  #   ports:
+  #     - 15432:5432
+  #   env_file:
+  #     - .docker-env
+  #   networks:
+  #     - postgres-network
+  #   volumes:
+  #     - db-data:/var/lib/postgresql/data/
+  #     #- ${PWD}/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  mariadb:
+    image: docker.io/mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: db
+    ports:
+      - "3306:3306"
+
+  mail:
+    image: "docker.io/axllent/mailpit:latest"
+    ports:
+      - 1025:1025
+      - 8025:8025
+
+volumes:
+  db-data:
+
+networks:
+  postgres-network:
+    driver: bridge

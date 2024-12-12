@@ -1,0 +1,17 @@
+{
+    "name": "<app>",
+    "short_name": "<app>",
+    "theme_color": "#f8f9fa",
+    "background_color": "#f8f9fa",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "<icon>",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
