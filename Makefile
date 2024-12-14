@@ -18,4 +18,4 @@ assets:
 	rm -rf v${BOOTSTRAP_VERSION}.zip
 
 scss: 
-	vendor/bin/pscss -s compressed theme/scss/app.scss > public/css/app.css
+	vendor/bin/pscss -s compressed scss/app.scss > public/css/app.css
