@@ -12,5 +12,7 @@ composer create-project -s dev m3tti/ci-simplify --repository '{"type":"vcs","ur
 make assets
 make scss
 
+# first make your database settings otherwise we'll use an sqlite3 database
+php spark migrate --all
 php spark serve
 ```
