@@ -22,9 +22,11 @@ assets:
 
 	unzip bootstrap-icons-${BOOTSTRAP_ICON_VERSION}.zip
 	cp bootstrap-icons-${BOOTSTRAP_ICON_VERSION}/font/bootstrap-icons.scss scss/libs/
+	cp -r bootstrap-icons-${BOOTSTRAP_ICON_VERSION}/font/fonts public/css/
 	rm -rf bootstrap-icons-${BOOTSTRAP_ICON_VERSION}
 	rm -rf bootstrap-icons-${BOOTSTRAP_ICON_VERSION}.zip
 
 
 scss:
 	vendor/bin/pscss -s compressed scss/app.scss > public/css/app.css
+
