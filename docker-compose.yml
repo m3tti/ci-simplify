@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  mariadb:
+   image: docker.io/mariadb:latest
+   environment:
+     MYSQL_ROOT_PASSWORD: test
+     MYSQL_DATABASE: changeme
+   ports:
+     - "3306:3306"
+
+  mail:
+    image: "docker.io/axllent/mailpit:latest"
+    ports:
+      - 1025:1025
+      - 8025:8025
+
+volumes:
+  db-data:
+
+networks:
+  postgres-network:
+    driver: bridge

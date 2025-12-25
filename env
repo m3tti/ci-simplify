@@ -15,6 +15,7 @@
 #--------------------------------------------------------------------
 
 # CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
@@ -30,13 +31,13 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+database.default.hostname = 0.0.0.0
+database.default.database = changeme # use the name in the docker-compose file
+database.default.username = root
+database.default.password = test
+database.default.DBDriver = MySQLi
+database.default.port = 3306
 # database.default.DBPrefix =
-# database.default.port = 3306
 
 # If you use MySQLi as tests, first update the values of Config\Database::$tests.
 # database.tests.hostname = localhost
@@ -67,3 +68,16 @@
 #--------------------------------------------------------------------
 
 # logger.threshold = 4
+
+#--------------------------------------------------------------------
+# E-Mail
+#--------------------------------------------------------------------
+email.fromEmail = 'test@test.de'
+email.fromName = 'Info Email'
+email.protocol = smtp
+email.SMTPHost = localhost
+#email.SMTPUser = tests
+#email.SMTPPass = tests
+#email.SMTPCrypto = tls
+email.SMTPPort = 1025
+
