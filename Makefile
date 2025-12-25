@@ -1,5 +1,5 @@
-BOOTSTRAP_VERSION:=5.3.3
-BOOTSTRAP_ICON_VERSION:=1.11.3
+BOOTSTRAP_VERSION:=5.3.8
+BOOTSTRAP_ICON_VERSION:=1.13.1
 JQUERY_VERSION:=3.7.1
 
 .PHONY: assets scss
@@ -21,8 +21,8 @@ assets:
 	rm -rf v${BOOTSTRAP_VERSION}.zip
 
 	unzip bootstrap-icons-${BOOTSTRAP_ICON_VERSION}.zip
-	cp bootstrap-icons-${BOOTSTRAP_ICON_VERSION}/font/bootstrap-icons.scss scss/libs/
-	cp -r bootstrap-icons-${BOOTSTRAP_ICON_VERSION}/font/fonts public/css/
+	cp bootstrap-icons-${BOOTSTRAP_ICON_VERSION}/bootstrap-icons.scss scss/libs/
+	cp -r bootstrap-icons-${BOOTSTRAP_ICON_VERSION}/fonts public/css/
 	rm -rf bootstrap-icons-${BOOTSTRAP_ICON_VERSION}
 	rm -rf bootstrap-icons-${BOOTSTRAP_ICON_VERSION}.zip
 
