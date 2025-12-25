@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url('/css/app.css') ?>">
     <link rel="stylesheet" href="<?= base_url('/css/charts.min.css') ?>">
+    <script src="<?= base_url('/js/jquery.slim.min.js') ?>"></script>
+    <script src="<?= base_url('/js/bootstrap.bundle.min.js') ?>"></script>
+
     <title>changeme</title>
 </head>
 
@@ -43,17 +46,7 @@
         <?= $this->renderSection('content') ?>
     </div>
 
-    <script type="importmap">
-        {
-      "imports": {
-        "@popperjs/core": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/esm/popper.min.js",
-        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.esm.min.js"
-      }
-    }
-    </script>
-    <script type="module">
-        import * as bootstrap from 'bootstrap'
-    </script>
+    <script src="<?= base_url('/js/app.js') ?>"></script>
 </body>
 
 </html>
